@@ -1,0 +1,16 @@
+C:\Users\dougl\Documents\cAlgo\Sources\Indicators\FullFractal\FullFractal\bin\Debug\FullFractal.dll
+C:\Users\dougl\Documents\cAlgo\Sources\Indicators\FullFractal\FullFractal\bin\Debug\FullFractal.pdb
+C:\Users\dougl\Documents\cAlgo\Sources\Indicators\FullFractal\FullFractal\bin\Debug\cAlgo.API.dll
+C:\Users\dougl\Documents\cAlgo\Sources\Indicators\FullFractal\FullFractal\bin\Debug\cAlgo.API.xml
+C:\Users\dougl\Documents\cAlgo\Sources\Indicators\FullFractal\FullFractal\obj\Debug\FullFractal.csprojResolveAssemblyReference.cache
+C:\Users\dougl\Documents\cAlgo\Sources\Indicators\FullFractal\FullFractal\obj\Debug\FullFractal.csproj.CoreCompileInputs.cache
+C:\Users\dougl\Documents\cAlgo\Sources\Indicators\FullFractal\FullFractal\obj\Debug\FullFractal.dll
+C:\Users\dougl\Documents\cAlgo\Sources\Indicators\FullFractal\FullFractal\obj\Debug\FullFractal.pdb
+C:\Users\douglas\Documents\cAlgo\Sources\Indicators\FullFractal\FullFractal\bin\Debug\FullFractal.dll
+C:\Users\douglas\Documents\cAlgo\Sources\Indicators\FullFractal\FullFractal\bin\Debug\FullFractal.pdb
+C:\Users\douglas\Documents\cAlgo\Sources\Indicators\FullFractal\FullFractal\bin\Debug\cAlgo.API.dll
+C:\Users\douglas\Documents\cAlgo\Sources\Indicators\FullFractal\FullFractal\bin\Debug\cAlgo.API.xml
+C:\Users\douglas\Documents\cAlgo\Sources\Indicators\FullFractal\FullFractal\obj\Debug\FullFractal.csprojResolveAssemblyReference.cache
+C:\Users\douglas\Documents\cAlgo\Sources\Indicators\FullFractal\FullFractal\obj\Debug\FullFractal.csproj.CoreCompileInputs.cache
+C:\Users\douglas\Documents\cAlgo\Sources\Indicators\FullFractal\FullFractal\obj\Debug\FullFractal.dll
+C:\Users\douglas\Documents\cAlgo\Sources\Indicators\FullFractal\FullFractal\obj\Debug\FullFractal.pdb

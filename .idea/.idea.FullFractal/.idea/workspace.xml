@@ -1,0 +1,486 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="cd93871a-1572-45bb-8b10-46c65aeb20a1" name="Default" comment="" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="TRACKING_ENABLED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="450">
+      <file leaf-file-name="FullFractal.cs" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/FullFractal/FullFractal.cs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1052">
+              <caret line="120" column="82" lean-forward="false" selection-start-line="120" selection-start-column="82" selection-end-line="120" selection-end-column="82" />
+              <folding>
+                <marker date="1517305327814" expanded="false" signature="6:144" ph="..." />
+                <marker date="1517305327814" expanded="true" signature="161:7321" ph="{...}" />
+                <marker date="1517305327814" expanded="true" signature="298:7319" ph="{...}" />
+                <marker date="1517305327814" expanded="true" signature="1426:1702" ph="{...}" />
+                <marker date="1517305327814" expanded="true" signature="1753:2050" ph="{...}" />
+                <marker date="1517305327814" expanded="true" signature="2105:2386" ph="{...}" />
+                <marker date="1517305327814" expanded="true" signature="2454:3023" ph="{...}" />
+                <marker date="1517305327814" expanded="true" signature="3104:3698" ph="{...}" />
+                <marker date="1517305327814" expanded="true" signature="3801:4215" ph="{...}" />
+                <marker date="1517305327814" expanded="true" signature="4297:4528" ph="{...}" />
+                <marker date="1517305327814" expanded="true" signature="4603:4871" ph="{...}" />
+                <marker date="1517305327814" expanded="true" signature="4932:5166" ph="{...}" />
+                <marker date="1517305327814" expanded="true" signature="5239:5424" ph="{...}" />
+                <marker date="1517305327814" expanded="true" signature="5473:6086" ph="{...}" />
+                <marker date="1517305327814" expanded="true" signature="6172:6514" ph="{...}" />
+                <marker date="1517305327814" expanded="true" signature="6576:6780" ph="{...}" />
+                <marker date="1517305327814" expanded="true" signature="6842:7313" ph="{...}" />
+                <marker date="1517305327814" expanded="true" signature="6898:7270" ph="{...}" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Fractal.cs" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/FullFractal/Fractal.cs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="520">
+              <caret line="98" column="29" lean-forward="false" selection-start-line="98" selection-start-column="29" selection-end-line="98" selection-end-column="29" />
+              <folding>
+                <marker date="1515201721839" expanded="true" signature="61:5051" ph="{...}" />
+                <marker date="1515201721839" expanded="true" signature="88:5049" ph="{...}" />
+                <marker date="1515201721839" expanded="true" signature="379:493" ph="{...}" />
+                <marker date="1515201721839" expanded="true" signature="525:731" ph="{...}" />
+                <marker date="1515201721839" expanded="true" signature="791:1100" ph="{...}" />
+                <marker date="1515201721839" expanded="true" signature="830:898" ph="{...}" />
+                <marker date="1515201721839" expanded="true" signature="1170:1352" ph="{...}" />
+                <marker date="1515201721839" expanded="true" signature="1408:1665" ph="{...}" />
+                <marker date="1515201721839" expanded="true" signature="1447:1511" ph="{...}" />
+                <marker date="1515201721839" expanded="true" signature="1714:1813" ph="{...}" />
+                <marker date="1515201721839" expanded="true" signature="1855:2070" ph="{...}" />
+                <marker date="1515201721839" expanded="true" signature="2104:3010" ph="{...}" />
+                <marker date="1515201721839" expanded="true" signature="2295:2571" ph="{...}" />
+                <marker date="1515201721839" expanded="true" signature="2693:2965" ph="{...}" />
+                <marker date="1515201721839" expanded="true" signature="3057:3696" ph="{...}" />
+                <marker date="1515201721839" expanded="true" signature="3304:3420" ph="{...}" />
+                <marker date="1515201721839" expanded="true" signature="3547:3659" ph="{...}" />
+                <marker date="1515201721839" expanded="true" signature="3741:4051" ph="{...}" />
+                <marker date="1515201721839" expanded="true" signature="4081:4134" ph="{...}" />
+                <marker date="1515201721839" expanded="true" signature="4204:4708" ph="{...}" />
+                <marker date="1515201721839" expanded="true" signature="4341:4460" ph="{...}" />
+                <marker date="1515201721839" expanded="true" signature="4583:4698" ph="{...}" />
+                <marker date="1515201721839" expanded="true" signature="4761:5043" ph="{...}" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="FractalService.cs" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/FullFractal/FractalService.cs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="22">
+              <caret line="72" column="64" lean-forward="false" selection-start-line="72" selection-start-column="64" selection-end-line="72" selection-end-column="64" />
+              <folding>
+                <marker date="1516792753238" expanded="false" signature="6:74" ph="..." />
+                <marker date="1516792753238" expanded="true" signature="102:4299" ph="{...}" />
+                <marker date="1516792753238" expanded="true" signature="136:4297" ph="{...}" />
+                <marker date="1516792753238" expanded="true" signature="419:588" ph="{...}" />
+                <marker date="1516792753238" expanded="true" signature="637:779" ph="{...}" />
+                <marker date="1516792753238" expanded="true" signature="824:984" ph="{...}" />
+                <marker date="1516792753238" expanded="true" signature="1045:1282" ph="{...}" />
+                <marker date="1516792753238" expanded="true" signature="1342:1580" ph="{...}" />
+                <marker date="1516792753238" expanded="true" signature="1637:1786" ph="{...}" />
+                <marker date="1516792753238" expanded="true" signature="1850:1989" ph="{...}" />
+                <marker date="1516792753238" expanded="true" signature="2042:2410" ph="{...}" />
+                <marker date="1516792753238" expanded="true" signature="2257:2375" ph="{...}" />
+                <marker date="1516792753238" expanded="true" signature="2462:2825" ph="{...}" />
+                <marker date="1516792753238" expanded="true" signature="2673:2790" ph="{...}" />
+                <marker date="1516792753238" expanded="true" signature="2876:3212" ph="{...}" />
+                <marker date="1516792753238" expanded="true" signature="3028:3202" ph="{...}" />
+                <marker date="1516792753238" expanded="true" signature="3262:3595" ph="{...}" />
+                <marker date="1516792753238" expanded="true" signature="3411:3585" ph="{...}" />
+                <marker date="1516792753238" expanded="true" signature="3641:3705" ph="{...}" />
+                <marker date="1516792753238" expanded="true" signature="3742:3826" ph="{...}" />
+                <marker date="1516792753238" expanded="true" signature="3891:4062" ph="{...}" />
+                <marker date="1516792753238" expanded="true" signature="4128:4290" ph="{...}" />
+                <marker date="1516792753238" expanded="true" signature="4212:4280" ph="{...}" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>badSignal</find>
+    </findStrings>
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/FullFractal/FullFractal.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/FullFractal/FractalService.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/FullFractal/Fractal.cs" root0="FORCE_HIGHLIGHTING" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/FullFractal/FullFractal.cs" />
+      </list>
+    </option>
+  </component>
+  <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsGulpfileManager">
+    <detection-done>true</detection-done>
+    <sorting>DEFINITION_ORDER</sorting>
+  </component>
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="10" />
+    <option name="y" value="20" />
+    <option name="width" value="1346" />
+    <option name="height" value="688" />
+  </component>
+  <component name="ProjectView">
+    <navigator currentView="SolutionExplorer" proportions="" version="1">
+      <flattenPackages />
+      <showMembers />
+      <showModules />
+      <showLibraryContents />
+      <hideEmptyPackages />
+      <abbreviatePackageNames />
+      <autoscrollToSource />
+      <autoscrollFromSource />
+      <sortByType />
+      <manualOrder />
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="Scratches" />
+      <pane id="SolutionExplorer">
+        <subPane>
+          <expand>
+            <path>
+              <item name="" type="13324e5d:SolutionExplorerViewPane$ProjectViewPaneTreeStructure$createRoot$1" />
+              <item name="FullFractal (1 project)" type="977d5f41:SolutionExplorerNodeRider" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+        <option name="show-file-system" value="false" />
+        <option name="show-all-items" value="false" />
+      </pane>
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../Robots/Rev/Rev.sln" />
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager">
+    <configuration name="Default" type="DotNetProject" factoryName=".NET Project">
+      <option name="EXE_PATH" value="" />
+      <option name="PROGRAM_PARAMETERS" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="PASS_PARENT_ENVS" value="1" />
+      <envs />
+      <option name="USE_MONO" value="0" />
+      <option name="USE_EXTERNAL_CONSOLE" value="0" />
+      <option name="PROJECT_PATH" value="" />
+      <option name="PROJECT_EXE_PATH_TRACKING" value="1" />
+      <option name="PROJECT_ARGUMENTS_TRACKING" value="1" />
+      <option name="PROJECT_WORKING_DIRECTORY_TRACKING" value="1" />
+      <option name="PROJECT_KIND" value="None" />
+      <option name="PROJECT_TFM" value="" />
+    </configuration>
+  </component>
+  <component name="ShelveChangesManager" show_recycled="false">
+    <option name="remove_strategy" value="false" />
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="cd93871a-1572-45bb-8b10-46c65aeb20a1" name="Default" comment="" />
+      <created>1515201675075</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1515201675075</updated>
+      <workItem from="1515201676472" duration="4023000" />
+      <workItem from="1517089164164" duration="1550000" />
+      <workItem from="1517305286119" duration="2165000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="7738000" />
+  </component>
+  <component name="TodoView">
+    <todo-panel id="selected-file">
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="true" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="-11" y="-11" width="2902" height="1762" extended-state="6" />
+    <editor active="true" />
+    <layout>
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Errors In Solution" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Unit Tests" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="NuGet" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25381944" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+    </layout>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager />
+    <watches-manager />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/FullFractal/FullFractal.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <marker date="1517305327814" expanded="false" signature="6:144" ph="..." />
+            <marker date="1517305327814" expanded="true" signature="161:7321" ph="{...}" />
+            <marker date="1517305327814" expanded="true" signature="298:7319" ph="{...}" />
+            <marker date="1517305327814" expanded="true" signature="1426:1702" ph="{...}" />
+            <marker date="1517305327814" expanded="true" signature="1753:2050" ph="{...}" />
+            <marker date="1517305327814" expanded="true" signature="2105:2386" ph="{...}" />
+            <marker date="1517305327814" expanded="true" signature="2454:3023" ph="{...}" />
+            <marker date="1517305327814" expanded="true" signature="3104:3698" ph="{...}" />
+            <marker date="1517305327814" expanded="true" signature="3801:4215" ph="{...}" />
+            <marker date="1517305327814" expanded="true" signature="4297:4528" ph="{...}" />
+            <marker date="1517305327814" expanded="true" signature="4603:4871" ph="{...}" />
+            <marker date="1517305327814" expanded="true" signature="4932:5166" ph="{...}" />
+            <marker date="1517305327814" expanded="true" signature="5239:5424" ph="{...}" />
+            <marker date="1517305327814" expanded="true" signature="5473:6086" ph="{...}" />
+            <marker date="1517305327814" expanded="true" signature="6172:6514" ph="{...}" />
+            <marker date="1517305327814" expanded="true" signature="6576:6780" ph="{...}" />
+            <marker date="1517305327814" expanded="true" signature="6842:7313" ph="{...}" />
+            <marker date="1517305327814" expanded="true" signature="6898:7270" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/FullFractal/FractalService.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1540">
+          <caret line="72" column="64" lean-forward="false" selection-start-line="72" selection-start-column="64" selection-end-line="72" selection-end-column="64" />
+          <folding>
+            <marker date="1516792753238" expanded="false" signature="6:74" ph="..." />
+            <marker date="1516792753238" expanded="true" signature="102:4299" ph="{...}" />
+            <marker date="1516792753238" expanded="true" signature="136:4297" ph="{...}" />
+            <marker date="1516792753238" expanded="true" signature="419:588" ph="{...}" />
+            <marker date="1516792753238" expanded="true" signature="637:779" ph="{...}" />
+            <marker date="1516792753238" expanded="true" signature="824:984" ph="{...}" />
+            <marker date="1516792753238" expanded="true" signature="1045:1282" ph="{...}" />
+            <marker date="1516792753238" expanded="true" signature="1342:1580" ph="{...}" />
+            <marker date="1516792753238" expanded="true" signature="1637:1786" ph="{...}" />
+            <marker date="1516792753238" expanded="true" signature="1850:1989" ph="{...}" />
+            <marker date="1516792753238" expanded="true" signature="2042:2410" ph="{...}" />
+            <marker date="1516792753238" expanded="true" signature="2257:2375" ph="{...}" />
+            <marker date="1516792753238" expanded="true" signature="2462:2825" ph="{...}" />
+            <marker date="1516792753238" expanded="true" signature="2673:2790" ph="{...}" />
+            <marker date="1516792753238" expanded="true" signature="2876:3212" ph="{...}" />
+            <marker date="1516792753238" expanded="true" signature="3028:3202" ph="{...}" />
+            <marker date="1516792753238" expanded="true" signature="3262:3595" ph="{...}" />
+            <marker date="1516792753238" expanded="true" signature="3411:3585" ph="{...}" />
+            <marker date="1516792753238" expanded="true" signature="3641:3705" ph="{...}" />
+            <marker date="1516792753238" expanded="true" signature="3742:3826" ph="{...}" />
+            <marker date="1516792753238" expanded="true" signature="3891:4062" ph="{...}" />
+            <marker date="1516792753238" expanded="true" signature="4128:4290" ph="{...}" />
+            <marker date="1516792753238" expanded="true" signature="4212:4280" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/FullFractal/FullFractal.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <marker date="1517305327814" expanded="false" signature="6:144" ph="..." />
+            <marker date="1517305327814" expanded="true" signature="161:7321" ph="{...}" />
+            <marker date="1517305327814" expanded="true" signature="298:7319" ph="{...}" />
+            <marker date="1517305327814" expanded="true" signature="1426:1702" ph="{...}" />
+            <marker date="1517305327814" expanded="true" signature="1753:2050" ph="{...}" />
+            <marker date="1517305327814" expanded="true" signature="2105:2386" ph="{...}" />
+            <marker date="1517305327814" expanded="true" signature="2454:3023" ph="{...}" />
+            <marker date="1517305327814" expanded="true" signature="3104:3698" ph="{...}" />
+            <marker date="1517305327814" expanded="true" signature="3801:4215" ph="{...}" />
+            <marker date="1517305327814" expanded="true" signature="4297:4528" ph="{...}" />
+            <marker date="1517305327814" expanded="true" signature="4603:4871" ph="{...}" />
+            <marker date="1517305327814" expanded="true" signature="4932:5166" ph="{...}" />
+            <marker date="1517305327814" expanded="true" signature="5239:5424" ph="{...}" />
+            <marker date="1517305327814" expanded="true" signature="5473:6086" ph="{...}" />
+            <marker date="1517305327814" expanded="true" signature="6172:6514" ph="{...}" />
+            <marker date="1517305327814" expanded="true" signature="6576:6780" ph="{...}" />
+            <marker date="1517305327814" expanded="true" signature="6842:7313" ph="{...}" />
+            <marker date="1517305327814" expanded="true" signature="6898:7270" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/FullFractal/FractalService.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1584">
+          <caret line="72" column="64" lean-forward="false" selection-start-line="72" selection-start-column="64" selection-end-line="72" selection-end-column="64" />
+          <folding>
+            <marker date="1516792753238" expanded="false" signature="6:74" ph="..." />
+            <marker date="1516792753238" expanded="true" signature="102:4299" ph="{...}" />
+            <marker date="1516792753238" expanded="true" signature="136:4297" ph="{...}" />
+            <marker date="1516792753238" expanded="true" signature="419:588" ph="{...}" />
+            <marker date="1516792753238" expanded="true" signature="637:779" ph="{...}" />
+            <marker date="1516792753238" expanded="true" signature="824:984" ph="{...}" />
+            <marker date="1516792753238" expanded="true" signature="1045:1282" ph="{...}" />
+            <marker date="1516792753238" expanded="true" signature="1342:1580" ph="{...}" />
+            <marker date="1516792753238" expanded="true" signature="1637:1786" ph="{...}" />
+            <marker date="1516792753238" expanded="true" signature="1850:1989" ph="{...}" />
+            <marker date="1516792753238" expanded="true" signature="2042:2410" ph="{...}" />
+            <marker date="1516792753238" expanded="true" signature="2257:2375" ph="{...}" />
+            <marker date="1516792753238" expanded="true" signature="2462:2825" ph="{...}" />
+            <marker date="1516792753238" expanded="true" signature="2673:2790" ph="{...}" />
+            <marker date="1516792753238" expanded="true" signature="2876:3212" ph="{...}" />
+            <marker date="1516792753238" expanded="true" signature="3028:3202" ph="{...}" />
+            <marker date="1516792753238" expanded="true" signature="3262:3595" ph="{...}" />
+            <marker date="1516792753238" expanded="true" signature="3411:3585" ph="{...}" />
+            <marker date="1516792753238" expanded="true" signature="3641:3705" ph="{...}" />
+            <marker date="1516792753238" expanded="true" signature="3742:3826" ph="{...}" />
+            <marker date="1516792753238" expanded="true" signature="3891:4062" ph="{...}" />
+            <marker date="1516792753238" expanded="true" signature="4128:4290" ph="{...}" />
+            <marker date="1516792753238" expanded="true" signature="4212:4280" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/FullFractal/DougFractals.cs" />
+    <entry file="file://$PROJECT_DIR$/FullFractal/Fractal.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="520">
+          <caret line="98" column="29" lean-forward="false" selection-start-line="98" selection-start-column="29" selection-end-line="98" selection-end-column="29" />
+          <folding>
+            <marker date="1515201721839" expanded="true" signature="61:5051" ph="{...}" />
+            <marker date="1515201721839" expanded="true" signature="88:5049" ph="{...}" />
+            <marker date="1515201721839" expanded="true" signature="379:493" ph="{...}" />
+            <marker date="1515201721839" expanded="true" signature="525:731" ph="{...}" />
+            <marker date="1515201721839" expanded="true" signature="791:1100" ph="{...}" />
+            <marker date="1515201721839" expanded="true" signature="830:898" ph="{...}" />
+            <marker date="1515201721839" expanded="true" signature="1170:1352" ph="{...}" />
+            <marker date="1515201721839" expanded="true" signature="1408:1665" ph="{...}" />
+            <marker date="1515201721839" expanded="true" signature="1447:1511" ph="{...}" />
+            <marker date="1515201721839" expanded="true" signature="1714:1813" ph="{...}" />
+            <marker date="1515201721839" expanded="true" signature="1855:2070" ph="{...}" />
+            <marker date="1515201721839" expanded="true" signature="2104:3010" ph="{...}" />
+            <marker date="1515201721839" expanded="true" signature="2295:2571" ph="{...}" />
+            <marker date="1515201721839" expanded="true" signature="2693:2965" ph="{...}" />
+            <marker date="1515201721839" expanded="true" signature="3057:3696" ph="{...}" />
+            <marker date="1515201721839" expanded="true" signature="3304:3420" ph="{...}" />
+            <marker date="1515201721839" expanded="true" signature="3547:3659" ph="{...}" />
+            <marker date="1515201721839" expanded="true" signature="3741:4051" ph="{...}" />
+            <marker date="1515201721839" expanded="true" signature="4081:4134" ph="{...}" />
+            <marker date="1515201721839" expanded="true" signature="4204:4708" ph="{...}" />
+            <marker date="1515201721839" expanded="true" signature="4341:4460" ph="{...}" />
+            <marker date="1515201721839" expanded="true" signature="4583:4698" ph="{...}" />
+            <marker date="1515201721839" expanded="true" signature="4761:5043" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/FullFractal/FractalService.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="22">
+          <caret line="72" column="64" lean-forward="false" selection-start-line="72" selection-start-column="64" selection-end-line="72" selection-end-column="64" />
+          <folding>
+            <marker date="1516792753238" expanded="false" signature="6:74" ph="..." />
+            <marker date="1516792753238" expanded="true" signature="102:4299" ph="{...}" />
+            <marker date="1516792753238" expanded="true" signature="136:4297" ph="{...}" />
+            <marker date="1516792753238" expanded="true" signature="419:588" ph="{...}" />
+            <marker date="1516792753238" expanded="true" signature="637:779" ph="{...}" />
+            <marker date="1516792753238" expanded="true" signature="824:984" ph="{...}" />
+            <marker date="1516792753238" expanded="true" signature="1045:1282" ph="{...}" />
+            <marker date="1516792753238" expanded="true" signature="1342:1580" ph="{...}" />
+            <marker date="1516792753238" expanded="true" signature="1637:1786" ph="{...}" />
+            <marker date="1516792753238" expanded="true" signature="1850:1989" ph="{...}" />
+            <marker date="1516792753238" expanded="true" signature="2042:2410" ph="{...}" />
+            <marker date="1516792753238" expanded="true" signature="2257:2375" ph="{...}" />
+            <marker date="1516792753238" expanded="true" signature="2462:2825" ph="{...}" />
+            <marker date="1516792753238" expanded="true" signature="2673:2790" ph="{...}" />
+            <marker date="1516792753238" expanded="true" signature="2876:3212" ph="{...}" />
+            <marker date="1516792753238" expanded="true" signature="3028:3202" ph="{...}" />
+            <marker date="1516792753238" expanded="true" signature="3262:3595" ph="{...}" />
+            <marker date="1516792753238" expanded="true" signature="3411:3585" ph="{...}" />
+            <marker date="1516792753238" expanded="true" signature="3641:3705" ph="{...}" />
+            <marker date="1516792753238" expanded="true" signature="3742:3826" ph="{...}" />
+            <marker date="1516792753238" expanded="true" signature="3891:4062" ph="{...}" />
+            <marker date="1516792753238" expanded="true" signature="4128:4290" ph="{...}" />
+            <marker date="1516792753238" expanded="true" signature="4212:4280" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/FullFractal/FullFractal.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1052">
+          <caret line="120" column="82" lean-forward="false" selection-start-line="120" selection-start-column="82" selection-end-line="120" selection-end-column="82" />
+          <folding>
+            <marker date="1517305327814" expanded="false" signature="6:144" ph="..." />
+            <marker date="1517305327814" expanded="true" signature="161:7321" ph="{...}" />
+            <marker date="1517305327814" expanded="true" signature="298:7319" ph="{...}" />
+            <marker date="1517305327814" expanded="true" signature="1426:1702" ph="{...}" />
+            <marker date="1517305327814" expanded="true" signature="1753:2050" ph="{...}" />
+            <marker date="1517305327814" expanded="true" signature="2105:2386" ph="{...}" />
+            <marker date="1517305327814" expanded="true" signature="2454:3023" ph="{...}" />
+            <marker date="1517305327814" expanded="true" signature="3104:3698" ph="{...}" />
+            <marker date="1517305327814" expanded="true" signature="3801:4215" ph="{...}" />
+            <marker date="1517305327814" expanded="true" signature="4297:4528" ph="{...}" />
+            <marker date="1517305327814" expanded="true" signature="4603:4871" ph="{...}" />
+            <marker date="1517305327814" expanded="true" signature="4932:5166" ph="{...}" />
+            <marker date="1517305327814" expanded="true" signature="5239:5424" ph="{...}" />
+            <marker date="1517305327814" expanded="true" signature="5473:6086" ph="{...}" />
+            <marker date="1517305327814" expanded="true" signature="6172:6514" ph="{...}" />
+            <marker date="1517305327814" expanded="true" signature="6576:6780" ph="{...}" />
+            <marker date="1517305327814" expanded="true" signature="6842:7313" ph="{...}" />
+            <marker date="1517305327814" expanded="true" signature="6898:7270" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+  </component>
+</project>
