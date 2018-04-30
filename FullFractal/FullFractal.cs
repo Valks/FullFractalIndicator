@@ -1,10 +1,6 @@
 ﻿using System;
 using cAlgo.API;
-using cAlgo.API.Internals;
-using cAlgo.API.Indicators;
 using cAlgo.Indicators;
-
-using System.Collections.Generic;
 
 namespace cAlgo
 {
@@ -14,21 +10,30 @@ namespace cAlgo
         [Parameter(DefaultValue = 5, MinValue = 5)]
         public int period { get; set; }
 
-        [Parameter("Horizontal Continuation line", DefaultValue = true)]
-        public bool showHorizontalContinuationLine { get; set; }
+        [Parameter("Highlight bad fractals", DefaultValue = true)]
+        public bool highlightBadFractals { get; set; }
 
-        [Parameter("Vertical Continuation line", DefaultValue = true)]
-        public bool showVerticalContinuationLine { get; set; }
+        [Parameter("Draw circles", DefaultValue = true)]
+        public bool drawCircles { get; set; }
 
-        [Parameter("Link highs and lows", DefaultValue = true)]
-        public bool linkHighLow { get; set; }
+        [Parameter("Draw errors", DefaultValue = true)]
+        public bool drawArrows { get; set; }
 
-        [Parameter("Print debug index", DefaultValue = false)]
-        public bool printDebugIndex { get; set; }
+        [Output("High continuation line", Color = Colors.Blue, PlotType = PlotType.Line, LineStyle = LineStyle.Dots)]
+        public IndicatorDataSeries horizontalContinuationLineHigh { get; set; }
 
-        private const String circle = "◯";
+        [Output("Low continuation line", Color = Colors.Orange, PlotType = PlotType.Line, LineStyle = LineStyle.Dots)]
+        public IndicatorDataSeries horizontalContinuationLineLow { get; set; }
+
+        [Output("High-Low line", Color = Colors.White, PlotType = PlotType.Line, LineStyle = LineStyle.Lines)]
+        public IndicatorDataSeries highLowLink { get; set; }
+
+//        [Parameter("Link highs and lows", DefaultValue = true)]
+//        public bool linkHighLow { get; set; }
+
         private const String arrowUp = "▲";
         private const String arrowDown = "▼";
+        private const String circle = "◯";
         private const String badSignal = "⛝";
         private const Colors linkColor = Colors.Beige;
         private const Colors highHorizontalLineColor = Colors.Red;
@@ -38,102 +43,152 @@ namespace cAlgo
 
         protected override void Initialize()
         {
-            FractalOptions options = new FractalOptions(period, showHorizontalContinuationLine, showVerticalContinuationLine, linkHighLow);
-            fractalService = new FractalService(MarketSeries, options);
+            fractalService = new FractalService(MarketSeries, period);
             fractalService.onFractal(plot);
         }
 
         public override void Calculate(int index)
         {
             int effectiveIndex = index - 1;
-            fractalService.processIndex(effectiveIndex);
 
-            plotHorizontalContinuationLine(index, fractalService.getLastHighFractal());
-            plotHorizontalContinuationLine(index, fractalService.getLastLowFractal());
+            fractalService.processIndex(effectiveIndex);
+            printHorizontal(index);
+        }
+
+        private void printHorizontal(int index)
+        {
+            Fractal lastfractal = fractalService.getLastFractal();
+            if (lastfractal == null)
+                return;
+            Fractal previousFractal = fractalService.getLastFractal().getPrevious();
+            if (previousFractal == null)
+                return;
+            Fractal highFractal = lastfractal.high ? lastfractal : previousFractal;
+            Fractal lowFractal = lastfractal.low ? lastfractal : previousFractal;
+
+            double highestHighValue = highFractal.value;
+            double lowestLowValue = lowFractal.value;
+            highestHighValue = adjustCurrentHigh(index, highFractal, highestHighValue, lowFractal, ref lowestLowValue);
+
+            for (int i = highFractal.index + 1; i < index; i++)
+                horizontalContinuationLineHigh[i] = highestHighValue;
+            for (int i = lowFractal.index + 1; i < index; i++)
+                horizontalContinuationLineLow[i] = lowestLowValue;
+        }
+
+        private double adjustCurrentHigh(int index, Fractal highFractal, double highestHighValue, Fractal lowFractal, ref double lowestLowValue)
+        {
+            for (int i = highFractal.index; i < index; i++)
+                if (MarketSeries.High[i] > highestHighValue)
+                    highestHighValue = MarketSeries.High[i];
+            for (int i = lowFractal.index; i < index; i++)
+                if (MarketSeries.Low[i] < lowestLowValue)
+                    lowestLowValue = MarketSeries.Low[i];
+            return highestHighValue;
         }
 
 
         private void plot(FractalEvent fractalEvent)
         {
-            Fractal fractal = fractalEvent.fractal;
-            plotFractalsLink(fractal.getPrevious(), fractal.getBest());
-            plotBadFractalSignals(fractal);
-            plotArrow(fractal);
-            plotVerticalContinuationLine(fractal.getBest());
+            Fractal fractal = fractalEvent.fractal.getBest();
+
+            if (drawCircles)
+                drawCircle(fractal);
+
+            linkHighs(fractalEvent);
+            linkLows(fractalEvent);
+            linkFractals(fractalEvent);
+
+            if (drawArrows)
+                plotArrow(fractal);
         }
 
-        private void plotVerticalContinuationLine(Fractal fractal)
+        private void drawCircle(Fractal fractal)
         {
-            if (!showVerticalContinuationLine)
-                return;
+            string label = getCircleLabel(fractal);
+            ChartObjects.DrawText(label, circle, fractal.index, fractal.value, VerticalAlignment.Center, HorizontalAlignment.Center, Colors.Aqua);
 
-            Fractal previousSameSideFractal = fractal.getPreviousOfSameSide();
-            if (previousSameSideFractal == null)
-                return;
+            Fractal previous = fractal.getPreviousOfSameSide();
+            if (previous != null)
+            {
+                Fractal current = fractal.getPrevious(false);
+                while (current.index > previous.index)
+                {
+                    if (current.high != fractal.high)
+                    {
+                        current = current.getPrevious(false);
+                        continue;
+                    }
+                    ChartObjects.RemoveObject(getCircleLabel(current));
+//                    if (!highlightBadFractals)
+//                        ChartObjects.RemoveObject(getArrowLabel(current));
+                    if (highlightBadFractals)
+                        ChartObjects.DrawText(getCircleLabel(current), circle, current.index, current.value, VerticalAlignment.Center, HorizontalAlignment.Center, Colors.Red);
 
-            Colors color = fractal.high ? Colors.Brown : Colors.Blue;
-            String name = previousSameSideFractal.index + "-vertical-line-" + (fractal.high ? "high" : "low");
-            ChartObjects.DrawLine(name, fractal.index, previousSameSideFractal.value, fractal.index, fractal.value, color, 1, LineStyle.Dots);
+                    current = current.getPrevious(false);
+                }
+            }
         }
 
-        private void plotHorizontalContinuationLine(int index, Fractal fractal)
+        private static string getCircleLabel(Fractal fractal)
         {
-            if (!showHorizontalContinuationLine || fractal == null)
-                return;
-
-            int middleIndex = fractalService.getMiddleIndex(index - 1);
-            bool isNewFractal = middleIndex == fractal.index;
-            if (isNewFractal)
-                drawHorizontalLineForPreviousFractalOfSameSide(fractal, middleIndex);
-
-            int lastOpositeFractalIndex = getPreviousIndex(fractal);
-            String name = (fractal.high ? "high" : "low") + "-horizontal-line-" + lastOpositeFractalIndex;
-            drawHorizontalLine(index, fractal, name);
+            return "circle-" + (fractal.high ? "H" : "L") + "-" + fractal.index;
         }
 
-        private void drawHorizontalLineForPreviousFractalOfSameSide(Fractal fractal, int middleIndex)
+        private void linkHighs(FractalEvent fractalEvent)
         {
-            Fractal previousOfSameSide = fractal.getPreviousOfSameSide();
-            if (previousOfSameSide == null)
-                return;
-            int previousIndex = getPreviousIndex(previousOfSameSide);
-            String newLineName = (fractal.high ? "high" : "low") + "-horizontal-line-" + previousIndex;
-            drawHorizontalLine(middleIndex, previousOfSameSide, newLineName);
+            Fractal fractal = fractalEvent.fractal.getBest();
+            Fractal previous = fractal.getPreviousOfSameSide();
+            if (fractal.high && previous != null)
+            {
+                double highest = Math.Max(fractal.value, previous.value);
+                for (int i = previous.index + 1; i < fractal.index; i++)
+                    horizontalContinuationLineHigh[i] = highest;
+
+                for (int i = fractal.index; i < fractalEvent.index; i++)
+                    horizontalContinuationLineHigh[i] = fractal.value;
+            }
         }
 
-        private void drawHorizontalLine(int index, Fractal fractal, string name)
+        private void linkFractals(FractalEvent fractalEvent)
         {
-            Colors color = fractal.high ? highHorizontalLineColor : lowHorizontalLineColor;
-            ChartObjects.DrawLine(name, fractal.index, fractal.value, index, fractal.value, color, 1, LineStyle.Dots);
+            Fractal fractal = fractalEvent.fractal.getBest();
+            Fractal previous = fractal.getPreviousOfSameSide();
+            if (previous != null)
+            {
+                for (int i = previous.index + 1; i < fractal.index - 1; i++)
+                    highLowLink[i] = Double.NaN;
+
+                highLowLink[previous.index] = previous.value;
+                highLowLink[fractal.index] = fractal.value;
+            }
         }
 
-        private void plotFractalsLink(Fractal fractal1, Fractal fractal2)
+        private void linkLows(FractalEvent fractalEvent)
         {
-            if (!linkHighLow || fractal1 == null || fractal2 == null)
-                return;
-            ChartObjects.DrawLine(fractal1.index + "-link", fractal1.index, fractal1.value, fractal2.index, fractal2.value, linkColor, 1, linkLineStyle);
-        }
+            Fractal fractal = fractalEvent.fractal.getBest();
+            Fractal previous = fractal.getPreviousOfSameSide();
+            if (fractal.low && previous != null)
+            {
+                double lowest = Math.Min(fractal.value, previous.value);
+                for (int i = previous.index + 1; i < fractal.index; i++)
+                    horizontalContinuationLineLow[i] = lowest;
 
-        private void plotBadFractalSignals(Fractal fractal)
-        {
-            List<Fractal> allWorse = fractal.getBadFractals();
-            for (int i = 0; i < allWorse.Count; i++)
-                plotBadFractalSignal(getPreviousIndex(fractal) + "-badSignal-" + i, allWorse[i]);
-        }
-
-        private void plotBadFractalSignal(String name, Fractal fractal)
-        {
-            ChartObjects.DrawText(name, badSignal, fractal.index, getTextPosition(fractal, 1.9), VerticalAlignment.Center, HorizontalAlignment.Center, Colors.Aqua);
+                for (int i = fractal.index; i < fractalEvent.index; i++)
+                    horizontalContinuationLineLow[i] = fractal.value;
+            }
         }
 
         private void plotArrow(Fractal fractal)
         {
-            String name = fractal.index + "-arrow-" + (fractal.high ? "high" : "low");
             String arrow = fractal.isHigher() ? arrowUp : arrowDown;
             Colors color = getArrowColor(fractal);
-            ChartObjects.DrawText(name, arrow, fractal.index, getTextPosition(fractal, 0.9), VerticalAlignment.Center, HorizontalAlignment.Center, color);
-            if (printDebugIndex)
-                ChartObjects.DrawText(fractal.index + "-index", fractal.index + "", fractal.index, getTextPosition(fractal, 1.5), VerticalAlignment.Center, HorizontalAlignment.Center, Colors.Aqua);
+            ChartObjects.DrawText(getArrowLabel(fractal), arrow, fractal.index, getTextPosition(fractal, 1.5), VerticalAlignment.Center, HorizontalAlignment.Center, color);
+        }
+
+        private static string getArrowLabel(Fractal fractal)
+        {
+            return "arrow-" + (fractal.high ? "high" : "low") + "-" + fractal.index;
         }
 
         private double getTextPosition(Fractal fractal, double offsetMultiplier = 2)
@@ -142,13 +197,6 @@ namespace cAlgo
             double distanceToBar = Symbol.PipSize * ScaleHelper.getScale(TimeFrame) * offsetMultiplier;
             double yPos = peakValue + distanceToBar * (fractal.high ? 1 : -1);
             return yPos;
-        }
-
-        private static int getPreviousIndex(Fractal fractal)
-        {
-            Fractal previous = fractal == null ? null : fractal.getPrevious();
-            int previousIndex = previous == null ? 0 : previous.index;
-            return previousIndex;
         }
 
         private static Colors getArrowColor(Fractal fractal)
@@ -164,6 +212,7 @@ namespace cAlgo
                 case FractalType.LowerLow:
                     return Colors.Blue;
             }
+
             return Colors.White;
         }
     }

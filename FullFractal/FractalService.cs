@@ -7,14 +7,14 @@ namespace cAlgo.Indicators
     public class FractalService
     {
         private MarketSeries marketSeries;
-        public FractalOptions options;
+        public int period;
         public Fractal lastFractal { get; set; }
 
         private List<Action<FractalEvent>> onFractalListeners;
 
-        public FractalService(MarketSeries marketSeries, FractalOptions options)
+        public FractalService(MarketSeries marketSeries, int period)
         {
-            this.options = options;
+            this.period = period;
             this.marketSeries = marketSeries;
             onFractalListeners = new List<Action<FractalEvent>>();
         }
@@ -29,7 +29,7 @@ namespace cAlgo.Indicators
 
         public void processIndex(int index)
         {
-            if (index < options.period)
+            if (index < period)
                 return;
 
             detectLowFractal(index);
@@ -69,7 +69,7 @@ namespace cAlgo.Indicators
 
         private bool isHighFractal(int middleIndex)
         {
-            int halfPeriod = options.period / 2;
+            int halfPeriod = period / 2;
             double middleValue = marketSeries.High[middleIndex];
             for (int i = (middleIndex - halfPeriod); i <= (middleIndex + halfPeriod); i++)
             {
@@ -122,7 +122,7 @@ namespace cAlgo.Indicators
 
         private int getHalfPeriod()
         {
-            return (options.period - (options.period % 2)) / 2;
+            return (period - (period % 2)) / 2;
         }
 
         private void processFractal(int index, Fractal fractal)

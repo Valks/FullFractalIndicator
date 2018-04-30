@@ -46,7 +46,6 @@
   <ItemGroup>
     <Compile Include="Fractal.cs" />
     <Compile Include="FractalEvent.cs" />
-    <Compile Include="FractalOptions.cs" />
     <Compile Include="FractalService.cs" />
     <Compile Include="FractalType.cs" />
     <Compile Include="FullFractal.cs" />

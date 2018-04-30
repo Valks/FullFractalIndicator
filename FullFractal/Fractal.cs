@@ -7,6 +7,10 @@ namespace cAlgo.Indicators
         public int index { get; set; }
         public double value { get; set; }
         public bool high { get; set; }
+        public bool low
+        {
+            get { return !high; }
+        }
 
         private Fractal previousFractal { get; set; }
         private Fractal nextFractal { get; set; }
@@ -29,18 +33,14 @@ namespace cAlgo.Indicators
         public Fractal getPrevious(bool filterBest = true)
         {
             if (!filterBest)
-            {
                 return previousFractal;
-            }
-            Fractal previous = getFirstOfBlock().previousFractal;
-            if (previous == null)
-                return null;
-            return filterBest ? previous.getBest() : previous;
+            Fractal previous = getBest().getFirstOfBlock().previousFractal;
+            return previous == null ? null : previous.getBest();
         }
 
         public Fractal getPreviousOfSameSide(bool filterBest = true)
         {
-            Fractal previous = getPrevious();
+            Fractal previous = getPrevious(filterBest);
             if (previous == null)
                 return null;
             return previous.getPrevious(filterBest);
@@ -49,9 +49,7 @@ namespace cAlgo.Indicators
         public Fractal getNext(bool filterBest = true)
         {
             if (!filterBest)
-            {
                 return nextFractal;
-            }
             Fractal next = getBest().nextFractal;
             if (next == null)
                 return null;
