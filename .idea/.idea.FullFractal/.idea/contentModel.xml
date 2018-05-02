@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ContentModelStore">
-    <e p="C:\Users\douglas\.Rider2017.3\system\resharper-host\local\Transient\ReSharperHost\v11\SolutionCaches\_FullFractal.-561285626.00" t="ExcludeRecursive" />
+    <e p="C:\Users\douglas\.Rider2018.1\system\resharper-host\local\Transient\ReSharperHost\v12\SolutionCaches\_FullFractal.-561285626.00" t="ExcludeRecursive" />
     <e p="C:\Users\douglas\Documents\cAlgo\Sources\Indicators\FullFractal" t="IncludeFlat">
       <e p="FullFractal" t="IncludeRecursive">
+        <e p=".gitignore" t="Include" />
         <e p="bin" t="ExcludeRecursive" />
         <e p="Fractal.cs" t="Include" />
         <e p="FractalEvent.cs" t="Include" />
-        <e p="FractalOptions.cs" t="Include" />
         <e p="FractalService.cs" t="Include" />
         <e p="FractalType.cs" t="Include" />
         <e p="FullFractal.cs" t="Include" />

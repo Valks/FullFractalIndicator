@@ -1,0 +1,6 @@
+.classpath
+.idea
+bin/
+obj/
+.vs
+.suo
