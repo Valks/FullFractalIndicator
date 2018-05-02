@@ -5,7 +5,7 @@ using cAlgo.Indicators;
 namespace cAlgo
 {
     /**
-     * FullFractal - Version 1.3
+     * FullFractal - Version 1.4
      */
     [Indicator(IsOverlay = true, TimeZone = TimeZones.UTC, AccessRights = AccessRights.None)]
     public class FullFractal : Indicator
@@ -31,6 +31,16 @@ namespace cAlgo
         [Output("High-Low line", Color = Colors.White, PlotType = PlotType.Line, LineStyle = LineStyle.Lines)]
         public IndicatorDataSeries highLowLink { get; set; }
 
+        [Parameter("Play sound on new High ...\n(i.e: C:\\Windows\\Media\\chimes.wav)", DefaultValue = "")]
+        public string newHighSound { get; set; }
+
+        [Parameter("Play sound on new Low ...\n(i.e: C:\\Windows\\Media\\chord.wav)", DefaultValue = "")]
+        public string newLowSound { get; set; }
+
+        [Parameter("Send notification to email", DefaultValue = "")]
+        public string emailNewFractalNotificationTo { get; set; }
+
+
         private const String arrowUp = "▲";
         private const String arrowDown = "▼";
         private const String circle = "◯";
@@ -39,7 +49,7 @@ namespace cAlgo
         protected override void Initialize()
         {
             fractalService = new FractalService(MarketSeries, period);
-            fractalService.onFractal(plot);
+            fractalService.onFractal(newFractalHandler);
         }
 
         public override void Calculate(int index)
@@ -83,7 +93,7 @@ namespace cAlgo
         }
 
 
-        private void plot(FractalEvent fractalEvent)
+        private void newFractalHandler(FractalEvent fractalEvent)
         {
             Fractal fractal = fractalEvent.fractal.getBest();
 
@@ -95,6 +105,40 @@ namespace cAlgo
 
             if (drawArrows)
                 plotArrow(fractal);
+
+            if (!IsRealTime)
+                return;
+
+            sendEmailNotification(fractal);
+            playSoundNotification(fractal);
+        }
+
+        private void playSoundNotification(Fractal fractal)
+        {
+            if (fractal.high && newHighSound.Length > 0)
+                Notifications.PlaySound(newHighSound);
+            else if (fractal.low && newLowSound.Length > 0)
+                Notifications.PlaySound(newLowSound);
+        }
+
+        private void sendEmailNotification(Fractal fractal)
+        {
+            string fractalType;
+            if (fractal.getFractalType() == FractalType.HigherHigh)
+                fractalType = "higher high";
+            else if (fractal.getFractalType() == FractalType.HigherLow)
+                fractalType = "higher low";
+            else if (fractal.getFractalType() == FractalType.LowerHigh)
+                fractalType = "lower high";
+            else
+                fractalType = "lower low";
+
+            string notificationEmailBody = "You have a new " + fractalType + " fractal on symbol " + Symbol.Code + ".";
+            if (emailNewFractalNotificationTo.Length > 0)
+            {
+                Print("Sending email to {0}", emailNewFractalNotificationTo);
+                Notifications.SendEmail("lizalves.alves@gmail.com", emailNewFractalNotificationTo, "New " + fractalType + " fractal", notificationEmailBody);
+            }
         }
 
         private void drawCircle(Fractal fractal)
