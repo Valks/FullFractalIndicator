@@ -4,10 +4,13 @@ using cAlgo.Indicators;
 
 namespace cAlgo
 {
+    /**
+     * FullFractal - Version 1.3
+     */
     [Indicator(IsOverlay = true, TimeZone = TimeZones.UTC, AccessRights = AccessRights.None)]
     public class FullFractal : Indicator
     {
-        [Parameter(DefaultValue = 5, MinValue = 5)]
+        [Parameter("Period", DefaultValue = 5, MinValue = 5)]
         public int period { get; set; }
 
         [Parameter("Highlight bad fractals", DefaultValue = true)]
@@ -28,17 +31,9 @@ namespace cAlgo
         [Output("High-Low line", Color = Colors.White, PlotType = PlotType.Line, LineStyle = LineStyle.Lines)]
         public IndicatorDataSeries highLowLink { get; set; }
 
-//        [Parameter("Link highs and lows", DefaultValue = true)]
-//        public bool linkHighLow { get; set; }
-
         private const String arrowUp = "▲";
         private const String arrowDown = "▼";
         private const String circle = "◯";
-        private const String badSignal = "⛝";
-        private const Colors linkColor = Colors.Beige;
-        private const Colors highHorizontalLineColor = Colors.Red;
-        private const Colors lowHorizontalLineColor = Colors.DarkCyan;
-        private const LineStyle linkLineStyle = LineStyle.Lines;
         private FractalService fractalService;
 
         protected override void Initialize()
@@ -92,8 +87,7 @@ namespace cAlgo
         {
             Fractal fractal = fractalEvent.fractal.getBest();
 
-            if (drawCircles)
-                drawCircle(fractal);
+            drawCircle(fractal);
 
             linkHighs(fractalEvent);
             linkLows(fractalEvent);
@@ -105,27 +99,21 @@ namespace cAlgo
 
         private void drawCircle(Fractal fractal)
         {
-            string label = getCircleLabel(fractal);
-            ChartObjects.DrawText(label, circle, fractal.index, fractal.value, VerticalAlignment.Center, HorizontalAlignment.Center, Colors.Aqua);
+            if (drawCircles)
+                ChartObjects.DrawText(getCircleLabel(fractal), circle, fractal.index, fractal.value, VerticalAlignment.Center, HorizontalAlignment.Center, Colors.Aqua);
 
             Fractal previous = fractal.getPreviousOfSameSide();
             if (previous != null)
             {
-                Fractal current = fractal.getPrevious(false);
-                while (current.index > previous.index)
+                foreach (Fractal badFractal in fractal.getBadFractals())
                 {
-                    if (current.high != fractal.high)
-                    {
-                        current = current.getPrevious(false);
-                        continue;
-                    }
-                    ChartObjects.RemoveObject(getCircleLabel(current));
-//                    if (!highlightBadFractals)
-//                        ChartObjects.RemoveObject(getArrowLabel(current));
+                    if (drawCircles)
+                        ChartObjects.RemoveObject(getCircleLabel(badFractal));
+                    if (!highlightBadFractals)
+                        ChartObjects.RemoveObject(getArrowLabel(badFractal));
                     if (highlightBadFractals)
-                        ChartObjects.DrawText(getCircleLabel(current), circle, current.index, current.value, VerticalAlignment.Center, HorizontalAlignment.Center, Colors.Red);
+                        ChartObjects.DrawText(getCircleLabel(badFractal), circle, badFractal.index, badFractal.value, VerticalAlignment.Center, HorizontalAlignment.Center, Colors.Red);
 
-                    current = current.getPrevious(false);
                 }
             }
         }
@@ -153,10 +141,10 @@ namespace cAlgo
         private void linkFractals(FractalEvent fractalEvent)
         {
             Fractal fractal = fractalEvent.fractal.getBest();
-            Fractal previous = fractal.getPreviousOfSameSide();
+            Fractal previous = fractal.getPrevious();
             if (previous != null)
             {
-                for (int i = previous.index + 1; i < fractal.index - 1; i++)
+                for (int i = previous.index + 1; i < fractal.index; i++)
                     highLowLink[i] = Double.NaN;
 
                 highLowLink[previous.index] = previous.value;
@@ -183,7 +171,7 @@ namespace cAlgo
         {
             String arrow = fractal.isHigher() ? arrowUp : arrowDown;
             Colors color = getArrowColor(fractal);
-            ChartObjects.DrawText(getArrowLabel(fractal), arrow, fractal.index, getTextPosition(fractal, 1.5), VerticalAlignment.Center, HorizontalAlignment.Center, color);
+            ChartObjects.DrawText(getArrowLabel(fractal), arrow, fractal.index, getTextPosition(fractal, 0.9), VerticalAlignment.Center, HorizontalAlignment.Center, color);
         }
 
         private static string getArrowLabel(Fractal fractal)

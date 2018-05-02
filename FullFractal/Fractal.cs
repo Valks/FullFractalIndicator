@@ -12,6 +12,8 @@ namespace cAlgo.Indicators
             get { return !high; }
         }
 
+        private double bestValue;
+
         private Fractal previousFractal { get; set; }
         private Fractal nextFractal { get; set; }
 
@@ -20,6 +22,7 @@ namespace cAlgo.Indicators
             this.index = index;
             this.value = value;
             this.high = high;
+            bestValue = value;
         }
 
         public bool isHigher()
@@ -72,26 +75,26 @@ namespace cAlgo.Indicators
 
         public Fractal getBest()
         {
-            Fractal correctFractal = this;
+            Fractal best = this;
             // search previous
             Fractal fractal = previousFractal;
             while (fractal != null && fractal.high == high)
             {
-                if (fractal.high && fractal.value > correctFractal.value ||
-                    !fractal.high && fractal.value < correctFractal.value)
-                    correctFractal = fractal;
+                if ((fractal.high && fractal.value > best.value) ||
+                    (fractal.low && fractal.value < best.value))
+                    best = fractal;
                 fractal = fractal.previousFractal;
             }
             // search next
             fractal = nextFractal;
             while (fractal != null && fractal.high == high)
             {
-                if (fractal.high && fractal.value > correctFractal.value ||
-                    !fractal.high && fractal.value < correctFractal.value)
-                    correctFractal = fractal;
+                if (fractal.high && fractal.value > best.value ||
+                    fractal.low && fractal.value < best.value)
+                    best = fractal;
                 fractal = fractal.nextFractal;
             }
-            return correctFractal;
+            return best;
         }
 
         public List<Fractal> getBadFractals()

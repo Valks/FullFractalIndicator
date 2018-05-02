@@ -9,6 +9,7 @@ namespace cAlgo.Indicators
         private MarketSeries marketSeries;
         public int period;
         public Fractal lastFractal { get; set; }
+        private int lastIndex;
 
         private List<Action<FractalEvent>> onFractalListeners;
 
@@ -16,6 +17,7 @@ namespace cAlgo.Indicators
         {
             this.period = period;
             this.marketSeries = marketSeries;
+            lastIndex = 0;
             onFractalListeners = new List<Action<FractalEvent>>();
         }
 
@@ -29,9 +31,11 @@ namespace cAlgo.Indicators
 
         public void processIndex(int index)
         {
-            if (index < period)
+            if (index < period || index <= lastIndex)
                 return;
 
+            lastIndex = index;
+            
             detectLowFractal(index);
             detectHighFractal(index);
         }

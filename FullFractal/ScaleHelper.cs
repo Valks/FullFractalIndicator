@@ -121,7 +121,9 @@ namespace cAlgo.Indicators
 
         public static double getScale(TimeFrame timeframe)
         {
-            return scale[timeframe];
+            if(scale.ContainsKey(timeframe))
+                return scale[timeframe];
+            return scale[TimeFrame.Minute];
         }
     }
 }
